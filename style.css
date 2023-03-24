@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+ 
+  .container {
+    /* background: linear-gradient(to top right, #00ff6a, #00f3ff); */
+    background-image: url("https://images.unsplash.com/photo-1588032786045-59cefda005c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZHJ1bXxlbnwwfHwwfHw%3D&w=1000&q=80");
+
+    background-size:cover;
+    filter: blur(0.7px);
+    
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .keys {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .tune {
+    width: 100px;
+    height: 100px;
+    text-shadow:0 0 8px rgb(162, 248, 24);
+    border: 6px solid #0ef435;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: all 0.09s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f15b10;
+    font-size: 80px;
+  }
+  
+  .playing {
+    background-color: rgba(223, 217, 217, 0.404);
+    transform: scale(1.4);
+    border: 6px solid rgb(205, 178, 24);
+    box-shadow: 0 0 12px rgb(237, 249, 8);
+  }

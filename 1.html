@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drum-kit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="keys">
+
+            <div data-key="65" class="tune">
+                <kbd>A</kbd> 
+            </div>
+            <div data-key="83" class="tune ">
+                <kbd>S</kbd> 
+            </div>
+            <div data-key="68" class="tune">
+                <kbd>D</kbd> 
+            </div>
+            <div data-key="70" class="tune">
+                <kbd>F</kbd> 
+            </div>
+            <div data-key="74" class="tune">
+                <kbd>J</kbd> 
+            </div>
+            <div data-key="75" class="tune">
+                <kbd>K</kbd> 
+            </div>
+            <div data-key="76" class="tune">
+                <kbd>L</kbd> 
+            </div>
+        </div>
+    </div>
+    <audio data-key="65" src="sound/sound_tom-1.mp3"></audio>
+    <audio data-key="83" src="sound/sound_clap.wav"></audio>
+    <audio data-key="68" src="sound/sound_tom.wav"></audio>
+    <audio data-key="70" src="sound/sound_tom-4.mp3"></audio>
+    <audio data-key="74" src="sound/sound_snare.wav"></audio>
+    <audio data-key="75" src="sound/sound_tom-2.mp3"></audio>
+    <audio data-key="76" src="sound/sound_kick.wav"></audio>
+    <script>
+
+        window.addEventListener('keydown', (e) => {
+            const audio = document.querySelector(`audio[data-key='${e.keyCode}']`);
+            const key = document.querySelector(`.tune[data-key='${e.keyCode}']`);
+            if (!audio) return; // wrong key press
+            audio.currentTime = 0;//rewind to start
+            audio.play();
+
+            // for adding css
+            key.classList.add('playing');
+
+            //for removing css
+            setTimeout(() => {
+                key.classList.remove('playing');
+            }, 100);
+
+            //for removing playing class
+            function removeTrans(e) {
+            if (e.propertyName != 'transform') return;
+                this.classList.remove('playing');
+            }
+            const keys = document.querySelectorAll('.tune');
+            keys.forEach(key => key.addEventListener('transitionend', removeTrans));
+
+        });
+    </script>
+</body>
+
+</html>
