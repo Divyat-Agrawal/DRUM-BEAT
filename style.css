@@ -27,7 +27,7 @@
   .tune {
     width: 100px;
     height: 100px;
-    text-shadow:0 0 8px rgb(162, 248, 24);
+    text-shadow:0 0 6px rgb(162, 248, 24);
     border: 6px solid #0ef435;
     border-radius: 0.4rem;
     cursor: pointer;
@@ -43,5 +43,5 @@
     background-color: rgba(223, 217, 217, 0.404);
     transform: scale(1.4);
     border: 6px solid rgb(205, 178, 24);
-    box-shadow: 0 0 12px rgb(237, 249, 8);
+    box-shadow: 0 0 11px rgb(237, 249, 8);
   }
