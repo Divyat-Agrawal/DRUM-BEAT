@@ -28,7 +28,7 @@
     width: 100px;
     height: 100px;
     text-shadow:0 0 6px rgb(162, 248, 24);
-    border: 6px solid #0ef435;
+    border: 8px solid #0ef435;
     border-radius: 0.4rem;
     cursor: pointer;
     transition: all 0.09s;
